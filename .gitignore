@@ -1,0 +1,62 @@
+.gitignore für Python/Flask-Projekte mit Fokus auf Sicherheit
+Byte-Code und kompilierte Dateien ignorieren
+Diese werden von Python automatisch erzeugt und gehören nicht in die Versionskontrolle.
+
+pycache/
+*.py[cod]
+*$py.class
+Virtuelle Umgebungen ignorieren
+Jede Entwicklungsumgebung ist anders. Diese Ordner enthalten alle installierten Pakete
+und sollten nicht hochgeladen werden. Die requirements.txt ist die Quelle der Wahrheit.
+
+.venv/
+venv/
+ENV/
+env/
+virtualenv/
+pip-log.txt
+pip-delete-this-directory.txt
+Umgebungs-spezifische Konfigurationsdateien
+Diese Dateien enthalten oft sensible Daten wie Passwörter, API-Schlüssel oder Datenbank-URIs.
+Sie sollten niemals in die Versionskontrolle eingecheckt werden.
+
+.env
+.env.*
+*.env
+config.py # Falls Sie eine separate Konfigurationsdatei mit sensiblen Daten haben
+IDE- und Editor-spezifische Ordner
+Diese Ordner enthalten benutzerspezifische Einstellungen für Ihre Entwicklungsumgebung.
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+Betriebssystem-spezifische Dateien
+Diese Dateien werden vom Betriebssystem automatisch erstellt und sind für das Projekt irrelevant.
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+Log-Dateien
+Log-Dateien können sensible Informationen enthalten und sollten nicht versioniert werden.
+
+*.log
+logs/
+Build- und Distributions-Artefakte
+
+build/
+dist/
+*.egg-info/
+*.egg
+Instanz-Ordner von Flask
+Flask kann einen instance-Ordner für lokale Konfigurationen verwenden.
+
+instance/
+Test-Artefakte
+
+.pytest_cache/
+.coverage
+htmlcov/
+Jupyter Notebook Checkpoints
+
+.ipynb_checkpoints

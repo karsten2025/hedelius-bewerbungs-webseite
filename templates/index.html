@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karsten Zenk | Bewerbung</title>
+    <!-- Verknüpfung zur CSS-Datei -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts für eine moderne Typografie -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== HEADER-SEKTION ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">Karsten Zenk</h1>
+                <p class="header-subtitle">Bewerbung als Referent Technisches Controlling</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== SEKTION 1: PLATZHALTER FÜR VIDEO ===== -->
+        <section id="pitch" class="section placeholder-section">
+            <div class="container">
+                <h2>Mein Pitch</h2>
+                <div class="video-placeholder-bg">
+                    <div class="marquee-container">
+                        <div class="marquee-text">
+                            Hier wird in Kürze ein Vorstellungsvideo platziert.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEKTION 2: KERNKOMPETENZEN ===== -->
+        <section id="kompetenzen" class="section">
+            <div class="container">
+                <h2>Meine Kernkompetenzen für Ihre Herausforderung</h2>
+                <div class="kompetenzen-grid">
+                    <div class="kompetenz-item">
+                        <h3>Technisches Controlling & Wirtschaftlichkeit</h3>
+                        <p>Erstellung fundierter Business Cases und Steuerung von Kosten, Leistung und Budget in
+                            komplexen technischen Großprojekten.</p>
+                    </div>
+                    <div class="kompetenz-item">
+                        <h3>Technisches Vertragsmanagement</h3>
+                        <p>Erfahrung in der Gestaltung, kaufmännischen Prüfung und Steuerung komplexer Dienstleistungs-
+                            und Lieferantenverträge im technischen Umfeld.</p>
+                    </div>
+                    <div class="kompetenz-item">
+                        <h3>Prozessintelligenz & KI-Potenziale</h3>
+                        <p>Expertise in der Weiterentwicklung von Controlling-Instrumenten durch moderne Ansätze wie
+                            LLMs und RAG-Systeme zur Effizienzsteigerung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEKTION 3: CASE STUDY ===== -->
+        <section id="case-study" class="section section-highlight">
+            <div class="container">
+                <h2>Strategie in Aktion: Case Study</h2>
+                <div class="case-study-content">
+                    <h3>Risikoabwehr durch Dekonstruktion eines Business Case</h3>
+                    <p><strong>Herausforderung:</strong> Einem vorgeschlagenen Investitionsprojekt wurden hohe
+                        wirtschaftliche Potenziale zugeschrieben. Die zugrundeliegenden Annahmen basierten jedoch auf
+                        kognitiven Verzerrungen und einer unvollständigen Datenlage.</p>
+                    <p><strong>Meine strategische Lösung:</strong> Anstatt die Annahmen zu übernehmen, habe ich einen
+                        dekonstruktiven Analyseprozess initiiert. Durch eine realitätsnähere Wissensbeschaffung,
+                        inklusive einer tiefgehenden Lieferkettenanalyse, wurde ein neuer, objektiver Business Case
+                        erstellt, der die tatsächlichen Risiken und Kosten aufdeckte.</p>
+                    <p><strong>Nachweisbares Ergebnis:</strong> Die Analyse führte zu einer fundierten
+                        "No-Go"-Entscheidung. Dadurch wurde eine Fehlinvestition im Millionenbereich verhindert und ein
+                        signifikantes strategisches Risiko für das Unternehmen abgewehrt. Der wahre Wert lag hier nicht
+                        in der Durchführung, sondern in der begründeten Vermeidung des Projekts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEKTION 4: DOKUMENTE & QUALIFIKATIONEN ===== -->
+        <section id="dokumente" class="section">
+            <div class="container">
+                <h2>Dokumente & Qualifikationen</h2>
+                <!-- Kombinierte Button-Leiste -->
+                <div class="dokumente-buttons">
+                    <a href="{{ url_for('static', filename='docs/Anschreiben_TC.pdf') }}" class="btn" target="_blank">Anschreiben (PDF)</a>
+                    <a href="{{ url_for('static', filename='docs/Lebenslauf_TC.pdf') }}" class="btn" target="_blank">Lebenslauf (PDF)</a>
+                    <a href="javascript:void(0)" class="btn tablinks" onclick="openTab(event, 'Zertifikate')" id="defaultOpen">Zertifikate</a>
+                    <a href="javascript:void(0)" class="btn tablinks" onclick="openTab(event, 'Zeugnisse')">Zeugnisse</a>
+                </div>
+
+                <!-- Tab-Inhalt für Zertifikate -->
+                <div id="Zertifikate" class="tabcontent">
+                    <h3 class="accordion-title">Zertifikate</h3>
+                    <button class="accordion">Menschen & Teams</button>
+                    <div class="panel">
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2023_02_Citizen_Development.pdf') }}" target="_blank">2023-02: Citizen Development</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2018_05_EnglScience.pdf') }}" target="_blank">2018-05: English for Science</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2018_03_EnglishDev.pdf') }}" target="_blank">2018-03: English Development</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2016_03_LeadingTeams.pdf') }}" target="_blank">2016-03: Leading Teams</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2016_01_PeopleAnalytics.pdf') }}" target="_blank">2016-01: People Analytics</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2016_01_InfluencingPeople.pdf') }}" target="_blank">2016-01: Influencing People</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2011_05_Referent.JPG') }}" target="_blank">2011-05: Referent</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2010_01_Referent.jpg') }}" target="_blank">2010-01: Referent</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2009_06_Transaktionsanalyse.JPG') }}" target="_blank">2009-06: Transaktionsanalyse</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2008_10_Führen.JPG') }}" target="_blank">2008-10: Führen</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2008_06_Transaktionsanalyse.JPG') }}" target="_blank">2008-06: Transaktionsanalyse</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2007_07_Transaktionsanalyse.JPG') }}" target="_blank">2007-07: Transaktionsanalyse</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2006_09_Referent.JPG') }}" target="_blank">2006-09: Referent</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/menschen_und_teams/2001_02_English.JPG') }}" target="_blank">2001-02: English</a></p>
+                    </div>
+
+                    <button class="accordion">Wirtschaft & Recht</button>
+                    <div class="panel">
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2024_10_Creating_Accountability.pdf') }}" target="_blank">2024-10: Creating Accountability</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2024_07_Talking_To_AI.pdf') }}" target="_blank">2024-07: Talking To AI</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2024_03_Data_Landscape_of_GenAI.pdf') }}" target="_blank">2024-03: Data Landscape of GenAI</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2023_11_Generative_AI_Overview.pdf') }}" target="_blank">2023-11: Generative AI Overview</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2017_04_ContractLaw.pdf') }}" target="_blank">2017-04: Contract Law</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2016_04_FinancialAccounting.pdf') }}" target="_blank">2016-04: Financial Accounting</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2015_06_Macroeconomics.pdf') }}" target="_blank">2015-06: Macroeconomics</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2015_01_ThinkAgain.pdf') }}" target="_blank">2015-01: Think Again</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2008_09_Vertragsgestaltung.JPG') }}" target="_blank">2008-09: Vertragsgestaltung</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2008_06_Vertragsgestaltung.JPG') }}" target="_blank">2008-06: Vertragsgestaltung</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/wirtschaft_und_recht/2008_05_Vertragsgestaltung.JPG') }}" target="_blank">2008-05: Vertragsgestaltung</a></p>
+                    </div>
+                     <button class="accordion">Strategisch, Taktisch, Operativ</button>
+                    <div class="panel">
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2025_03_PMICPMI.pdf') }}" target="_blank">2025-03: PMI-CPMAI</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2025_02_CogCPMAI.pdf') }}" target="_blank">2025-02: Cog-CPMAI</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2024_09_PMIPMOCP.pdf') }}" target="_blank">2024-09: PMI-PMOCP</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2023_10_PMIDASSM.pdf') }}" target="_blank">2023-10: PMI-DASSM</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2023_09_PMIACP.pdf') }}" target="_blank">2023-09: PMI-ACP</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2022_02_Organizational_Transformation.pdf') }}" target="_blank">2022-02: Organizational Transformation</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2021_08_DABasics.pdf') }}" target="_blank">2021-08: DA Basics</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2021_07_PMIPMP®.pdf') }}" target="_blank">2021-07: PMI-PMP®</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2014_06_ModelThinking.pdf') }}" target="_blank">2014-06: Model Thinking</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2014_04_Entrepreneurship.pdf') }}" target="_blank">2014-04: Entrepreneurship</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2013_11_MSProject.pdf') }}" target="_blank">2013-11: MS Project</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2005_07_ProjectFMEA.pdf') }}" target="_blank">2005-07: Project FMEA</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/strategisch_taktisch_operativ/2003_12_ProjectManagement.JPG') }}" target="_blank">2003-12: Project Management</a></p>
+                    </div>
+                    <button class="accordion">Prozess & Qualität</button>
+                    <div class="panel">
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2024_10_Agile_Metrics.pdf') }}" target="_blank">2024-10: Agile Metrics</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2024_02_Value_Stream_Management.pdf') }}" target="_blank">2024-02: Value Stream Management</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2024_02_Azure_DevOps_Boards.pdf') }}" target="_blank">2024-02: Azure DevOps Boards</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2023_05_Calculus_of_Value_Stream_Management.pdf') }}" target="_blank">2023-05: Calculus of Value Stream Management</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2017_09_Operations_Management.pdf') }}" target="_blank">2017-09: Operations Management</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2016_11_ProcessMining.pdf') }}" target="_blank">2016-11: Process Mining</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2015_11_OperationsAnalytics.pdf') }}" target="_blank">2015-11: Operations Analytics</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2013_06_REFAProzess1.pdf') }}" target="_blank">2013-06: REFA Prozess (Teil 2)</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2013_06_REFAProzess.pdf') }}" target="_blank">2013-06: REFA Prozess</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2008_03_Arbeitssicherheit.JPG') }}" target="_blank">2008-03: Arbeitssicherheit</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2005_09_FMEA.JPG') }}" target="_blank">2005-09: FMEA</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2005_07_Project_FMEA.JPG') }}" target="_blank">2005-07: Project FMEA</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/2005_01_Qualitätsmanagement.JPG') }}" target="_blank">2005-01: Qualitätsmanagement</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/prozess_und_qualitaet/1997_04_StatistischeProzessregelung.JPG') }}" target="_blank">1997-04: Statistische Prozessregelung</a></p>
+                    </div>
+                    <button class="accordion">Beruflich</button>
+                    <div class="panel">
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2014_04_Thermodynamics.pdf') }}" target="_blank">2014-04: Thermodynamics</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2007_04_Solid_Works.jpg') }}" target="_blank">2007-04: Solid Works</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2007_01_Solid_Works.JPG') }}" target="_blank">2007-01: Solid Works</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2003_05_FEM.JPG') }}" target="_blank">2003-05: FEM</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2002_06_Catia.JPG') }}" target="_blank">2002-06: Catia</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2002_05_Catia.JPG') }}" target="_blank">2002-05: Catia</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2002_03_Dipl.-Ing.(FH).JPG') }}" target="_blank">2002-03: Dipl.-Ing. (FH)</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2001_09_FEM1.JPG') }}" target="_blank">2001-09: FEM (Teil 2)</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/2001_09_FEM_.JPG') }}" target="_blank">2001-09: FEM</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/1994_09_Staatlich_geprüfter_Techniker.pdf') }}" target="_blank">1994-09: Staatlich geprüfter Techniker</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/1993_09_Staatlich_geprüfter_Techniker.JPG') }}" target="_blank">1993-09: Staatlich geprüfter Techniker</a></p>
+                        <p><a href="{{ url_for('static', filename='docs/zertifikate/beruflich/1988_01_Maschinenschlosser.JPG') }}" target="_blank">1988-01: Maschinenschlosser</a></p>
+                    </div>
+                </div>
+
+                <!-- Tab-Inhalt für Zeugnisse -->
+                <div id="Zeugnisse" class="tabcontent">
+                     <div id="zeugnisse-prompt">
+                        <h3 class="accordion-title">Zeugnisse</h3>
+                        <p class="password-info">Dieser Bereich ist geschützt. Bitte geben Sie das Passwort ein.</p>
+                        <div class="password-form">
+                            <input type="password" id="zeugnis-password" placeholder="Passwort">
+                            <button class="btn" onclick="checkPassword()">Freischalten</button>
+                        </div>
+                        <p id="password-error"></p>
+                    </div>
+                    <div id="zeugnisse-content" style="display: none;">
+                        <h3 class="accordion-title">Zeugnisse</h3>
+                        <button class="accordion">Salzgitter Flachstahl GmbH (11/2007 - heute)</button>
+                        <div class="panel">
+                            <p>Zeugnis wird nachgereicht.</p>
+                        </div>
+                        <button class="accordion">Wilhelm Hebenstreit GmbH (12/2005 - 06/2007)</button>
+                        <div class="panel">
+                           <p><a href="{{ url_for('static', filename='docs/zeugnisse/wilhelm_hebenstreit_gmbh/2007_07_Zeugnis_Hebenstreit.pdf') }}" target="_blank">2007-07: Arbeitszeugnis</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEKTION 5: KONTAKT ===== -->
+        <footer id="kontakt" class="footer">
+            <div class="container">
+                <h2>Lassen Sie uns ins Gespräch kommen</h2>
+                <p>Ich freue mich auf Ihre Kontaktaufnahme.</p>
+                <div class="kontakt-info">
+                    <p><strong>Email:</strong> karsten.zenk@googlemail.com</p>
+                    <p><strong>Telefon:</strong> +49 160 95000361</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/karsten-zenk"
+                            target="_blank">linkedin.com/in/karsten-zenk</a></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Verknüpfung zur JavaScript-Datei -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

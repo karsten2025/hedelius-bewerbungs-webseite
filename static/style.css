@@ -1,0 +1,439 @@
+/* static/style.css */
+
+/* ===== Eigene Schriftart definieren ===== */
+@font-face {
+    font-family: 'Corinthiago'; /* Name für die Schriftart festlegen */
+    src: url('fonts/Corinthiago.ttf') format('truetype'); /* Pfad zur Schriftdatei, relativ zur CSS-Datei */
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* ===== GRUNDEINSTELLUNGEN & VARIABLEN ===== */
+:root {
+    --primary-color: #B0BDC7; /* Ein dunkles, sattes Blau (passend zu Stahl/Industrie) */
+    --secondary-color: #fc591f; /* Ein starker, warmer Orangeton als Akzent */
+    --background-color: #f4f7f6;
+    --text-color: #333333;
+    --light-gray: #e9ecef;
+    --white: #ffffff;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --font-header-custom: 'Corinthiago', sans-serif; /* Neue Variable für die benutzerdefinierte Schrift */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Unterstrich für Überschriften */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-highlight {
+    background-color: var(--white);
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.header-title {
+    font-family: var(--font-header-custom); /* Benutzerdefinierte Schriftart anwenden */
+    font-size: 5.5rem; /* Ggf. Schriftgröße anpassen, da die neue Schrift anders wirkt */
+    margin: 0;
+    color: var(--white);
+    font-weight: bold; /* Sicherstellen, dass die Schrift fett dargestellt wird */
+    letter-spacing: 2px; /* Etwas mehr Abstand zwischen den Buchstaben */
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+    font-weight: 300;
+    color: var(--light-gray);
+}
+
+/* ===== PLATZHALTER-SEKTION (VIDEO) ===== */
+.placeholder-section {
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+.video-placeholder-bg {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    background-color: #e0e0e0; /* Hintergrundfarbe falls Bild nicht lädt */
+    background-image: url('/static/img/karsten-profile.jpg'); /* Absoluter Pfad für mehr Stabilität */
+    background-size: contain; /* Bild komplett anzeigen, nicht abschneiden */
+    background-position: center;
+    background-repeat: no-repeat; /* Verhindert Kachelung des Bildes */
+    overflow: hidden; /* Stellt sicher, dass der Lauftext innerhalb der Grenzen bleibt */
+}
+
+.marquee-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 51, 102, 0.7); /* Halbtransparenter Hintergrund für den Text */
+    white-space: nowrap; /* Verhindert Zeilenumbruch */
+}
+
+.marquee-text {
+    display: inline-block;
+    padding: 10px 0;
+    color: var(--white);
+    font-size: 1.2rem;
+    padding-left: 100%; /* Startet den Text außerhalb des sichtbaren Bereichs */
+    animation: marquee-animation 15s linear infinite;
+}
+
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* ===== KERNKOMPETENZEN ===== */
+.kompetenzen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.kompetenz-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kompetenz-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.kompetenz-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem; /* KORRIGIERT: Schriftgröße leicht reduziert */
+    margin-top: 0;
+    min-height: 3em; /* Stellt sicher, dass alle Boxen die gleiche Höhe für den Titel haben */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== CASE STUDY ===== */
+.case-study-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    background: var(--background-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.case-study-content h3 {
+    margin-top: 0;
+}
+
+/* ===== DOKUMENTE & TABS ===== */
+.dokumente-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn, .tablinks {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: var(--shadow);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover, .tablinks:hover {
+    background-color: #d4620c;
+    transform: translateY(-3px);
+}
+
+.tablinks.active {
+    background-color: var(--primary-color);
+}
+
+.tabcontent {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.accordion-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ===== PASSWORT-FORMULAR STYLING ===== */
+#zeugnisse-prompt {
+    text-align: center;
+}
+.password-info {
+    margin-bottom: 20px;
+}
+.password-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#zeugnis-password {
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+#password-error {
+    color: red;
+    font-weight: bold;
+    min-height: 1.2em;
+}
+
+
+/* ===== AKKORDEON STYLING ===== */
+.accordion {
+    background-color: var(--white);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-family: var(--font-secondary);
+    transition: background-color 0.4s ease;
+    border-radius: var(--border-radius);
+    margin-bottom: 5px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion:after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.accordion.active:after {
+    content: "–";
+}
+
+.accordion:hover, .accordion.active {
+    background-color: var(--light-gray);
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.panel p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+.panel p a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* ===== FOOTER (KONTAKT) ===== */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.footer h2 {
+    color: var(--white);
+}
+
+.footer h2::after {
+    background-color: var(--secondary-color);
+}
+
+.kontakt-info {
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.kontakt-info p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--white);
+}
+
+/* =================================== */
+/* ===== RESPONSIVE ANPASSUNGEN ===== */
+/* =================================== */
+
+/* Für Tablets und kleinere Desktops */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .header-title {
+        font-size: 4rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+}
+
+/* Für Smartphones */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .header-title {
+        font-size: 3rem;
+        letter-spacing: 1px;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .kompetenz-item {
+        padding: 20px;
+    }
+    
+    .kompetenz-item h3 {
+        min-height: auto; /* Auf kleinen Bildschirmen Höhe automatisch anpassen */
+    }
+
+    .dokumente-buttons {
+        flex-direction: column; /* Buttons untereinander anordnen */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn, .tablinks {
+        width: 80%;
+        text-align: center;
+        padding: 12px 20px;
+    }
+    
+    .password-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #zeugnis-password {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .accordion {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .footer {
+        padding: 40px 0;
+    }
+}
